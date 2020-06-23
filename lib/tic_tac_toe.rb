@@ -46,15 +46,15 @@ def turn(board)
   puts "Please enter 1-9:"
   user_input = gets.strip
   position = input_to_index(user_input)
-  if valid_move?(board, index)
-    move(board, index, current_player(board))
+  if valid_move?(board, board)
+    move(board, position, current_player(board))
     display_board(board)
   else
     turn(board)
   end
 end
 
-  
+
 
 def won?(board)
   WIN_COMBINATIONS.detect do |combo|
