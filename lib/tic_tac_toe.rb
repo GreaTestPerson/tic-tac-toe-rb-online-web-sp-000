@@ -42,28 +42,19 @@ def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
 
-# def turn(board)
-#   puts "Please enter 1-9:"
-#   user_input = gets.strip
-#   position = input_to_index(user_input)
-#   if valid_move?(board, index)
-#     move(board, index, current_player(board))
-#     display_board(board)
-#   else
-#     turn(board)
-#   end
-# end
-
-  def turn
-    puts "Where would you like to go?"
-    input = gets.strip
-    if valid_move?(input)
-      move (input.to_i)
-    else
-      puts "Not so fast budy, you can't go there."
-      turn
-    end
+def turn(board)
+  puts "Please enter 1-9:"
+  user_input = gets.strip
+  position = input_to_index(user_input)
+  if valid_move?(board, index)
+    move(board, index, current_player(board))
+    display_board(board)
+  else
+    turn(board)
   end
+end
+
+  
 
 def won?(board)
   WIN_COMBINATIONS.detect do |combo|
