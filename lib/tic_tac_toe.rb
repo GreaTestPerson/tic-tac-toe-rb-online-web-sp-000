@@ -54,6 +54,17 @@ end
 #   end
 # end
 
+  def turn
+    puts "Where would you like to go?"
+    input = gets.strip
+    if valid_move?(input)
+      move (input.to_i)
+    else
+      puts "Not so fast budy, you can't go there."
+      turn
+    end
+  end
+
 def won?(board)
   WIN_COMBINATIONS.detect do |combo|
     board[combo[0]] == board[combo[1]] &&
