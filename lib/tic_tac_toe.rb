@@ -54,7 +54,9 @@ def turn(board)
   end
 end
 
-
+def turn_count(board)
+  board.count{|token| token == "X" || token == "O"}
+end
 
 def won?(board)
   WIN_COMBINATIONS.detect do |combo|
