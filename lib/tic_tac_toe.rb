@@ -1,57 +1,3 @@
-
-# def move(board, index, token)
-#   board[index]= token
-# end
-
-# def position_taken?(board, index)
-#   board[index] != " "
-# end  
-
-# def valid_move?(board, index)
-#   index.between?(0,8) && !position_taken?(board, index)
-# end
-
-# def turn(board)
-#   puts "Please enter 1-9:"
-#   user_input = gets.strip
-#   position = input_to_index(user_input)
-#   if valid_move?(board, board)
-#     move(board, position, current_player(board))
-#     display_board(board)
-#   else
-#     turn(board)
-#   end
-# end
-
-# def turn_count(board)
-#   board.count{|token| token == "X" || token == "O"}
-# end
-
-# def current_player(board)
-#   turn_count(board) % 2 == 0 ? "X" : "O"
-# end
-
-
-# def full?(board)
-#   board.all? { |token| token == 'X' || token == 'O' }
-# end
-
-# def draw?(board)
-#   !won?(board) && full?(board)
-# end
-
-# def over?(board)
-#   won?(board) || draw?(board)
-# end
-
-# def winner(board)
-#   if winning_combo = won?(board)
-#     board[winning_combo.first]
-#   end
-# end
-
-# end
-
 WIN_COMBINATIONS = [
   [0,1,2],
   [3,4,5],
@@ -70,7 +16,7 @@ def play(board)
   if won?(board)
     puts "Congratulations #{winner(board)}!"
   elsif draw?(board)
-    puts "Cats Game!"
+    puts "Cat's Game!"
   end
 end
 
